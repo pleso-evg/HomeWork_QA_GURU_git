@@ -9,6 +9,7 @@ public class SearchTests {
     void successfulSearchTest() {
         open("https://www.google.com/");
         $("[name=q]").setValue("selenide").pressEnter();
+        $("[id=captcha-form]").doubleClick();
         $("[id=search]").shouldHave(text("https://selenide.org"));
     }
 }
